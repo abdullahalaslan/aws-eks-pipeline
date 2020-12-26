@@ -15,13 +15,13 @@
             - export KUBECONFIG=$HOME/.kube/config
       build:
         commands:
-          - docker build --tag $REPOSITORY_URI .
-          - docker tag $REPOSITORY_NAME:latest $REPOSITORY_URI:latest
+          - docker build -t $REPOSITORY_URI .
+          - docker tag $REPOSITORY_URI:latest $REPOSITORY_NAME:latest
     
       post_build:
         commands:
           - docker push $REPOSITORY_URI:latest
-          - CREDENTIALS=$(aws sts assume-role --role-arn $EKS_KUBECTL_ROLE_ARN --role-session-name codebuild-kubectl --duration-seconds 900)
+          - CREDENTIALS=$(aws sts assume-role --role-arn $EKS_KUBECTL_ROLE_ARN --role-session-name Case-User --duration-seconds 900)
           - export AWS_ACCESS_KEY_ID="$(echo ${CREDENTIALS} | jq -r '.Credentials.AccessKeyId')"
           - export AWS_SECRET_ACCESS_KEY="$(echo ${CREDENTIALS} | jq -r '.Credentials.SecretAccessKey')"
           - export AWS_SESSION_TOKEN="$(echo ${CREDENTIALS} | jq -r '.Credentials.SessionToken')"
