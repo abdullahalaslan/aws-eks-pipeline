@@ -11,7 +11,7 @@
           - export PATH=$PWD/:$PATH
       pre_build:
           commands:
-            - $(aws ecr get-login --no-include-email --region eu-central-1)
+            - $(aws ecr get-login --no-include-email)
             - export KUBECONFIG=$HOME/.kube/config
       build:
         commands:
