@@ -1,0 +1,10 @@
+{
+    "name": "docker_web_app",
+    "version": "1.0.0",
+    "description": "Node.js on Docker",
+    "author": "Abdullah Alaslan",
+    "main": "hello-world.js",
+    "scripts": {
+      "start": "node hello-world.js"
+    }
+  }
