@@ -166,3 +166,16 @@ spec:
 ## Pipeline Schema
 
 ![AWS Pipeline](cicd.png "pipeline")
+
+## My Decisions and Reasons
+
+### Why NodeJS Application?
+
+- It's easy to write and you can handle dependencies with a single command. It's open source, So very easy to find helpful source in web.
+### Why CodeBuild?
+
+- Because If I will working on AWS, I prefer aws build service. CodeBuild is very easy making integration to pipeline. And You managing build and deploy process in one single yaml file. Simplicity is the key.
+
+### Why EKS?
+
+- If you want the flexibility to integrate externally with the open-source Kubernetes community, spending the additional effort on setting up EKS may be the better option. Also my experience always be on EKS. 
