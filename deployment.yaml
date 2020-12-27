@@ -28,7 +28,7 @@ spec:
     metadata:
       labels:
         app: nodejs-app
-  spec:
+    spec:
       containers:
         - name: status
           image: 574868243623.dkr.ecr.eu-central-1.amazonaws.com/hello-ecrrepository:latest
